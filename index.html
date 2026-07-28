@@ -1,44 +1,477 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>E & E Favor Books | Fruit Tell Their Tales</title>
-<style>
-:root { --cream:#fffaf0; --green:#2f6b3c; --gold:#f2b134; --red:#d94a3a; --text:#2f2f2f; --white:#fff; }
-*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
-.hero{text-align:center;padding:56px 20px 38px;background:linear-gradient(180deg,#fff4cf 0%,var(--cream) 100%)}
-.brand{font-size:.95rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
-h1{margin:0;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.05;color:var(--red)}
-.subtitle{max-width:680px;margin:18px auto 0;font-size:1.15rem}
-.book-card{width:min(920px,calc(100% - 32px));margin:0 auto 32px;background:var(--white);border-radius:24px;padding:32px;box-shadow:0 12px 30px rgba(0,0,0,.08);text-align:center}
-.book-icon{font-size:4rem;margin-bottom:8px} h2{margin:8px 0 12px;color:var(--green);font-size:2rem}
-.book-copy{max-width:700px;margin:0 auto 24px;font-size:1.05rem}
-.button{display:inline-block;padding:15px 28px;border-radius:999px;background:var(--green);color:var(--white);text-decoration:none;font-size:1.05rem;font-weight:700}
-.authors{width:min(820px,calc(100% - 32px));margin:0 auto 40px;text-align:center;padding:12px 12px 28px}.authors p{max-width:720px;margin:0 auto}.tagline{margin-top:20px;font-weight:700;color:var(--red)}
-footer{text-align:center;padding:24px 16px;background:var(--green);color:var(--white);font-size:.95rem}
-@media(max-width:600px){.hero{padding-top:42px}.book-card{padding:24px 20px}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E & E Favor Books | Wonderfully Made. Wonderfully Told.</title>
+  <meta name="description" content="Faith-filled stories that inspire healthy hearts, curious minds, and strong families. Discover Fruits Tell Their Tales by E & E Favor Books.">
+  <style>
+
+:root{
+  --green:#1f7a35;
+  --green-dark:#07592d;
+  --red:#dc343c;
+  --blue:#213c7f;
+  --orange:#d95f33;
+  --yellow:#f2d84f;
+  --cream:#fff9ec;
+  --ink:#172019;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"DM Sans",sans-serif;
+  color:var(--ink);
+  background:#f2f1eb;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.site-shell{
+  width:min(1120px,100%);
+  margin:0 auto;
+  background:#fff;
+  box-shadow:0 0 50px rgba(0,0,0,.08);
+}
+.announcement{
+  background:linear-gradient(90deg,#f4d85a,#ffe68b,#f4d85a);
+  padding:9px 20px;
+  text-align:center;
+  font-weight:700;
+  font-size:13px;
+}
+.header{
+  min-height:86px;
+  padding:14px 40px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:20;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.logo{margin-right:auto;line-height:.85}
+.logo-line{font-size:31px;font-weight:800;letter-spacing:-3px}
+.logo-sub{font-size:13px;font-weight:800;color:var(--blue);padding-left:2px}
+.red{color:var(--red)}
+.green{color:var(--green)}
+.blue{color:var(--blue)}
+.orange{color:var(--orange)}
+.yellow{color:var(--yellow)}
+.white{color:#fff}
+.nav{display:flex;gap:28px;font-size:14px;font-weight:700}
+.nav a:hover{color:var(--green)}
+.top-cta,.btn{
+  background:var(--green);
+  color:white;
+  border-radius:8px;
+  padding:14px 22px;
+  font-weight:800;
+  border:2px solid var(--green);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s ease;
+}
+.top-cta{padding:12px 18px;font-size:14px}
+.btn:hover,.top-cta:hover{transform:translateY(-2px);background:#17652b}
+.btn.secondary{background:#fff;color:var(--green)}
+.btn.secondary:hover{background:var(--green);color:#fff}
+.btn.light{background:#fff;color:var(--green);border-color:#fff}
+.menu-toggle{display:none;background:none;border:0;font-size:28px}
+.hero{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  min-height:450px;
+  background:linear-gradient(90deg,#effcff 0%,#f8fdff 48%,#d8f2f0 100%);
+  overflow:hidden;
+}
+.hero-copy{
+  padding:62px 20px 48px 70px;
+  position:relative;
+  z-index:2;
+}
+.eyebrow{
+  margin:0 0 12px;
+  color:var(--green);
+  text-transform:uppercase;
+  font-size:17px;
+  font-weight:800;
+  letter-spacing:.7px;
+}
+.hero h1{
+  margin:0;
+  color:var(--blue);
+  font-size:clamp(40px,5vw,61px);
+  line-height:1;
+  letter-spacing:-2px;
+}
+.script{
+  font-family:"Kalam",cursive;
+  color:var(--red);
+  font-size:29px;
+  font-weight:700;
+  margin:14px 0;
+}
+.hero-text{
+  max-width:520px;
+  line-height:1.7;
+  font-size:16px;
+}
+.button-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:25px}
+.hero-art{display:flex;align-items:flex-end;justify-content:center;padding:18px 20px 0 0}
+.hero-art img{width:100%;max-width:560px;mix-blend-mode:multiply}
+.featured{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:40px;
+  align-items:center;
+  padding:58px 70px;
+  background:var(--cream);
+}
+.cover-wrap{position:relative;display:flex;justify-content:center}
+.cover{width:min(340px,90%);box-shadow:0 26px 40px rgba(0,0,0,.18);transform:perspective(900px) rotateY(-7deg);border-radius:3px;position:relative;z-index:2}
+.cover-glow{position:absolute;width:70%;height:70%;background:#fff4c3;filter:blur(40px);border-radius:50%}
+.badge{display:inline-block;background:#f8dc69;border-radius:999px;padding:7px 12px;font-weight:800;font-size:12px;text-transform:uppercase}
+.featured-copy h2{
+  font-size:clamp(36px,4vw,53px);
+  line-height:1.03;
+  margin:15px 0 5px;
+}
+.subtitle{
+  font-family:"Kalam",cursive;
+  font-size:26px;
+  font-weight:700;
+  color:var(--blue);
+  margin:0 0 15px;
+}
+.description{font-size:16px;line-height:1.65}
+.feature-icons{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:25px 0;
+  text-align:center;
+}
+.feature-icons div{display:flex;flex-direction:column;gap:6px;font-size:12px}
+.feature-icons span{font-size:30px}
+.wide{min-width:220px}
+.meta{margin-top:14px;font-size:13px;font-weight:700;color:#4f584f}
+.more{
+  background:linear-gradient(180deg,#edf6df,#f5faef);
+  padding:35px 55px 45px;
+  text-align:center;
+}
+.more h2{color:var(--green);font-size:30px;margin:0}
+.heart{color:#b8a833;font-size:24px;margin-bottom:15px}
+.more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;text-align:left}
+.more-grid article{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:center}
+.circle{width:58px;height:58px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:28px;box-shadow:0 8px 18px rgba(0,0,0,.07)}
+.more-grid h3{font-size:15px;color:var(--green-dark);margin:0 0 5px}
+.more-grid p{font-size:13px;line-height:1.5;margin:0}
+.join{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:45px 70px;
+  background:#fff;
+}
+.join-script{font-size:36px;margin-bottom:5px}
+.join-copy p:not(.script){max-width:430px;line-height:1.6}
+#signup-form{display:flex;max-width:430px;margin-top:18px}
+#signup-form input{flex:1;padding:14px;border:1px solid #cfd4cf;border-radius:8px 0 0 8px;font:inherit}
+#signup-form button{border:0;background:var(--green);color:#fff;font-weight:800;padding:0 22px;border-radius:0 8px 8px 0;cursor:pointer}
+#signup-note{display:block;margin-top:9px;color:#666}
+.join-art{position:relative}
+.join-art img{max-height:280px;object-fit:contain;margin:auto;opacity:.82}
+.pencils{position:absolute;right:10px;bottom:15px;font-size:36px;transform:rotate(-12deg)}
+.buy-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:28px 55px;background:#fff9da}
+.buy-card{background:#fff;border:1px solid #e2e6d9;border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 8px 20px rgba(0,0,0,.05)}
+.buy-card strong{color:var(--green-dark);font-size:18px}
+.buy-card span{font-size:13px;color:#606760}
+.buy-card a{color:var(--green);font-weight:800;margin-top:8px}
+.visits{
+  background:linear-gradient(120deg,var(--green),var(--green-dark));
+  color:#fff;
+  padding:45px 65px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+.visits .eyebrow{color:#ffe66d}
+.visits h2{font-size:34px;margin:0 0 10px}
+.visits p{max-width:720px;line-height:1.6}
+.trust{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  padding:18px 45px;
+  background:linear-gradient(90deg,#f0d452,#ffe66f);
+}
+.trust div{display:grid;grid-template-columns:34px 1fr;align-items:center}
+.trust span{font-size:24px;grid-row:1/3}
+.trust strong{font-size:13px}
+.trust small{font-size:11px}
+footer{
+  background:#06552e;
+  color:#fff;
+  padding:48px 55px 28px;
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1.2fr;
+  gap:35px;
+}
+footer h4{margin:0 0 12px}
+footer a{display:block;font-size:13px;margin:8px 0;color:#e8f4ec}
+footer p{font-size:13px;line-height:1.6;color:#d9eee1}
+.footer-script{font-size:18px;color:#fff2a8}
+.socials{letter-spacing:8px}
+.copyright{grid-column:1/-1;text-align:center;font-size:12px;color:#cae2d2;margin-top:10px}
+@media(max-width:850px){
+  .nav{display:none;position:absolute;top:86px;left:0;right:0;background:white;padding:20px 35px;flex-direction:column;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+  .nav.open{display:flex}
+  .menu-toggle{display:block}
+  .top-cta{display:none}
+  .hero,.featured,.join{grid-template-columns:1fr}
+  .hero-copy{padding:50px 35px 20px}
+  .hero-art{padding:0 25px}
+  .featured{padding:50px 35px}
+  .more-grid,.buy-strip,.trust{grid-template-columns:1fr 1fr}
+  .feature-icons{grid-template-columns:1fr 1fr}
+  .visits{flex-direction:column;align-items:flex-start}
+  footer{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .site-shell{width:100%}
+  .header{padding:12px 20px}
+  .announcement{font-size:11px}
+  .hero h1{font-size:40px}
+  .script{font-size:25px}
+  .button-row,.btn{width:100%}
+  .featured,.join,.more,.buy-strip,.visits{padding-left:22px;padding-right:22px}
+  .more-grid,.buy-strip,.trust,footer{grid-template-columns:1fr}
+  .feature-icons{grid-template-columns:1fr 1fr}
+  #signup-form{flex-direction:column;gap:8px}
+  #signup-form input,#signup-form button{border-radius:8px;padding:14px}
+  footer{padding:40px 25px}
+}
+
 </style>
 </head>
 <body>
-<header class="hero">
-<div class="brand">E & E Favor Books</div>
-<h1>Fruit Tell Their Tales</h1>
-<p class="subtitle">A joyful, interactive picture book filled with colorful fruits, playful facts, learning activities, and a delicious fruit salad recipe.</p>
-</header>
-<main>
-<section class="book-card">
-<div class="book-icon">🍎🍌🍉</div>
-<h2>Let the Fruity Adventure Begin!</h2>
-<p class="book-copy">Join Apple, Banana, Watermelon, Strawberry, and their fruity friends as they come to life with fun facts, colorful personalities, tracing, matching, and hands-on learning. Perfect for children ages 3–8.</p>
-<a class="button" href="#">Buy the Book</a>
-</section>
-<section class="authors">
-<h2>Meet the Authors</h2>
-<p>Elijah and Ezra Favor are curious young brothers who love learning, exploring, and sharing fun discoveries. Together with their mom and co-author, Taniesha Favor, they created this book to inspire children to read, laugh, and enjoy healthy foods.</p>
-<p class="tagline">Growing Hearts. One Story at a Time.</p>
-</section>
-</main>
-<footer>© 2026 E & E Favor Books</footer>
+  <div class="site-shell" id="top">
+    <div class="announcement">🍎 Faith-filled stories that inspire healthy hearts, curious minds, and strong families.</div>
+
+    <header class="header">
+      <a class="logo" href="#top" aria-label="E and E Favor Books home">
+        <div class="logo-line"><span class="red">E</span><span class="green">&</span><span class="blue">E</span></div>
+        <div class="logo-sub">Favor Books</div>
+      </a>
+
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <nav class="nav">
+        <a href="#top">Home</a>
+        <a href="#book">Book</a>
+        <a href="#freebies">Freebies</a>
+        <a href="#about">About</a>
+        <a href="#visits">School Visits</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="top-cta" href="#buy">Buy the Book</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Welcome to</p>
+          <h1><span class="red">E</span> & <span class="blue">E Favor Books</span></h1>
+          <p class="script">Wonderfully Made. Wonderfully Told.</p>
+          <p class="hero-text">We create faith-filled children’s books that inspire curiosity, healthy living, and a love for God’s wonderful creation. Written by two brothers, for families everywhere.</p>
+          <div class="button-row">
+            <a class="btn primary" href="#buy">📖 Buy the Book</a>
+            <a class="btn secondary" href="#freebies">⇩ Free Coloring Pages</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="assets/orchard.jpg" alt="Elijah and Ezra exploring a fruit orchard">
+        </div>
+      </section>
+
+      <section class="featured" id="book">
+        <div class="cover-wrap">
+          <div class="cover-glow"></div>
+          <img class="cover" src="assets/front-cover.jpg" alt="Fruits Tell Their Tales book cover">
+        </div>
+
+        <div class="featured-copy">
+          <span class="badge">★ Featured Book</span>
+          <h2><span class="red">Fruits</span> <span class="green">Tell Their</span> <span class="orange">Tales</span></h2>
+          <p class="subtitle">A Two-Brother Adventure</p>
+          <p class="description">Join Elijah and Ezra on a fruity adventure where apples crunch, lemons squeeze, watermelons knock, and every fruit has a tale to tell!</p>
+
+          <div class="feature-icons">
+            <div><span>🍓</span><strong>Fun Fruit Facts</strong></div>
+            <div><span>📖</span><strong>Playful Rhymes</strong></div>
+            <div><span>❤️</span><strong>Healthy Living</strong></div>
+            <div><span>🌿</span><strong>God’s Creation</strong></div>
+          </div>
+
+          <a class="btn primary wide" href="#buy">🛒 Buy Hardcover</a>
+          <div class="meta">Ages 3–8 &nbsp; | &nbsp; 42 Pages &nbsp; | &nbsp; Hardcover</div>
+        </div>
+      </section>
+
+      <section class="more" id="about">
+        <h2>More Than Just a Book</h2>
+        <div class="heart">♡</div>
+        <div class="more-grid">
+          <article>
+            <div class="circle">📗</div>
+            <div>
+              <h3>Encourages Healthy Habits</h3>
+              <p>Kids learn about fruits in a fun way that promotes healthy choices for life.</p>
+            </div>
+          </article>
+          <article>
+            <div class="circle">👨‍👩‍👧‍👦</div>
+            <div>
+              <h3>Perfect for Family Time</h3>
+              <p>Great for read-alouds, bedtime stories, classrooms, and quality time together.</p>
+            </div>
+          </article>
+          <article>
+            <div class="circle">✝️</div>
+            <div>
+              <h3>Faith-Filled Stories</h3>
+              <p>Every page points children to the beauty and goodness of God’s creation.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="join" id="freebies">
+        <div class="join-copy">
+          <p class="script join-script">Join Our Family!</p>
+          <p>Get free coloring pages, fun activities, and be the first to know about new books and special offers.</p>
+          <form id="signup-form">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">✉ Join Now</button>
+          </form>
+          <small id="signup-note">We respect your privacy. Unsubscribe at any time.</small>
+        </div>
+        <div class="join-art">
+          <img src="assets/orchard.jpg" alt="Elijah and Ezra artwork for coloring-page section">
+          <div class="pencils">✏️ ✏️ ✏️</div>
+        </div>
+      </section>
+
+      <section class="buy-strip" id="buy">
+        <div class="buy-card">
+          <strong>Barnes & Noble</strong>
+          <span>Buy online through Barnes & Noble</span>
+          <a href="#" data-retailer="barnes">Shop now →</a>
+        </div>
+        <div class="buy-card">
+          <strong>Independent Bookstores</strong>
+          <span>Available through Ingram distribution</span>
+          <a href="#" data-retailer="ingram">Find a seller →</a>
+        </div>
+        <div class="buy-card">
+          <strong>Signed Copies</strong>
+          <span>Perfect for gifts, churches, and events</span>
+          <a href="mailto:hello@eefavorbooks.com?subject=Signed%20Copy%20Request">Contact us →</a>
+        </div>
+      </section>
+
+      <section class="visits" id="visits">
+        <div>
+          <p class="eyebrow">School visits • churches • storytimes</p>
+          <h2>Bring the fruit adventure to your community.</h2>
+          <p>Invite E & E Favor Books for storytime, school programs, church events, interviews, and family-centered gatherings.</p>
+        </div>
+        <a class="btn light" href="mailto:hello@eefavorbooks.com?subject=Event%20or%20School%20Visit">Book a Visit</a>
+      </section>
+
+      <section class="trust">
+        <div><span>🚚</span><strong>Fast Shipping</strong><small>From your chosen retailer</small></div>
+        <div><span>🛡️</span><strong>Secure Checkout</strong><small>Safe and trusted</small></div>
+        <div><span>♡</span><strong>Made with Love</strong><small>For your family</small></div>
+        <div><span>☺</span><strong>Family-Focused</strong><small>Stories with purpose</small></div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="footer-brand">
+        <div class="logo-line"><span class="red">E</span><span class="green">&</span><span class="yellow">E</span></div>
+        <div class="logo-sub white">Favor Books</div>
+        <p class="script footer-script">Wonderfully Made. Wonderfully Told.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#top">Home</a>
+        <a href="#book">Book</a>
+        <a href="#freebies">Free Coloring Pages</a>
+        <a href="#visits">School Visits</a>
+      </div>
+
+      <div>
+        <h4>Customer Care</h4>
+        <a href="mailto:hello@eefavorbooks.com">Contact</a>
+        <a href="#buy">Where to Buy</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+
+      <div>
+        <h4>Stay Connected</h4>
+        <p>Follow us for updates, sneak peeks, and encouragement for your family.</p>
+        <div class="socials">● ● ● ●</div>
+      </div>
+
+      <div class="copyright">© <span id="year"></span> E & E Favor Books. All rights reserved.</div>
+    </footer>
+  </div>
+  <script>
+const retailerLinks = {
+  barnes: "https://www.barnesandnoble.com/",
+  ingram: "https://www.ingramcontent.com/"
+};
+
+document.querySelectorAll("[data-retailer]").forEach(link => {
+  const key = link.dataset.retailer;
+  link.href = retailerLinks[key] || "#";
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+toggle.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  toggle.setAttribute("aria-expanded", String(open));
+});
+
+document.querySelectorAll(".nav a").forEach(a => a.addEventListener("click", () => {
+  nav.classList.remove("open");
+  toggle.setAttribute("aria-expanded", "false");
+}));
+
+document.getElementById("signup-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  if (!email) return;
+  document.getElementById("signup-note").textContent =
+    "Thank you! Connect this form to your email service before launch so visitors receive the coloring pages.";
+  e.target.reset();
+});
+
+</script>
 </body>
 </html>
